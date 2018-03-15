@@ -1,0 +1,61 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="@dimen/_170sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_circle"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_width="@dimen/_2sdp"
+        android:src="@drawable/demo_user" />
+
+    <fordonor.com.fordonor.Utility.ForDonorTextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:paddingTop="@dimen/_5sdp"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/_12sdp"
+        android:text="Ushasi Guha"
+        android:layout_below="@+id/image_circle"/>
+
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_user_name">
+
+        <fordonor.com.fordonor.Utility.ForDonorTextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:text="ushasi@gmail.com"
+            android:paddingLeft="@dimen/_5sdp"
+            />
+    </RelativeLayout>
+
+    <fordonor.com.fordonor.Utility.ForDonorTextView
+        android:id="@+id/tv_loc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_12sdp"
+        android:text="kolkata,24 P.G.S.(N:)"
+        android:layout_below="@+id/rl"
+        android:paddingTop="@dimen/_2sdp"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="@dimen/_5sdp"
+        />
+</RelativeLayout>

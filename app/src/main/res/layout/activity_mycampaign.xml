@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_2sdp"
+        android:background="@android:color/white"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/colorPrimary">
+
+        <fordonor.com.fordonor.Utility.ForDonorEditText
+            android:id="@+id/tv_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:hint="Name Here..."
+            android:background="@drawable/transparent_rounded_corner"
+            android:layout_margin="@dimen/_10sdp"
+            android:textColorHint="#20000000"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableRight="@drawable/white_search"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp"/>
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rl_my_campaign"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:layout_marginTop="@dimen/_10sdp">
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

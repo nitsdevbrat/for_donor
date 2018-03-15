@@ -1,0 +1,34 @@
+package fordonor.com.fordonor.campaign.model;
+
+/**
+ * Created by and-36 on 12/3/18.
+ */
+
+public class CampaignModel {
+
+        public int productImage;
+        public String productName;
+
+        public CampaignModel(String productName, int productImage) {
+            this.productImage = productImage;
+            this.productName = productName;
+        }
+
+        public int getProductImage() {
+            return productImage;
+        }
+
+        public void setProductImage(int productImage) {
+            this.productImage = productImage;
+        }
+
+        public String getProductName() {
+            return productName;
+        }
+
+        public void setProductName(String productName) {
+            this.productName = productName;
+        }
+
+
+}

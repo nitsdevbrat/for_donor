@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/l"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginRight="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/donorheart"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/donorname"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/l"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/edittxtwhitebg">
+        <fordonor.com.fordonor.Utility.ForDonorEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
+            android:padding="@dimen/_10sdp"
+            android:hint="Email"
+            android:text="dev@gmail.com"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:drawablePadding="@dimen/_5sdp"
+            android:backgroundTint="@android:color/transparent"
+            android:drawableLeft="@drawable/emailwhite"
+            android:background="@drawable/edittxtbg"/>
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/edittxtwhitebg">
+
+            <fordonor.com.fordonor.Utility.ForDonorEditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white"
+                android:textColor="@android:color/white"
+                android:padding="@dimen/_10sdp"
+                android:inputType="textPassword"
+                android:hint="Password"
+                android:text="string"
+                android:singleLine="true"
+                android:drawablePadding="@dimen/_5sdp"
+                android:imeOptions="actionDone"
+                android:backgroundTint="@android:color/transparent"
+                android:drawableLeft="@drawable/passwhite"
+                android:background="@drawable/edittxtbg"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rbt_signin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:background="@drawable/border_edittext">
+            <fordonor.com.fordonor.Utility.ForDonorTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/signin"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+            <fordonor.com.fordonor.Utility.ForDonorTextView
+                android:id="@+id/frgt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:text="@string/frgt" />
+
+            <fordonor.com.fordonor.Utility.ForDonorTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:text="@string/signinwith" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="3"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+                <ImageView
+                    android:id="@+id/fb"
+                    android:layout_weight="0.8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/fb"/>
+
+                <ImageView
+                    android:id="@+id/gplus"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/gplus"/>
+
+                <ImageView
+                    android:id="@+id/link_in"
+                    android:layout_weight="0.8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lin"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginLeft="@dimen/_95sdp"
+                android:layout_marginRight="@dimen/_95sdp">
+
+                <ImageView
+                    android:id="@+id/tweet"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/tweet"/>
+
+                <ImageView
+                    android:id="@+id/insta"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/insta"/>
+
+            </LinearLayout>
+
+            <fordonor.com.fordonor.Utility.ForDonorTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@android:color/white"
+                android:text="@string/dontacc" />
+
+
+<LinearLayout
+    android:id="@+id/l_register"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_margin="@dimen/_30sdp"
+    android:background="@drawable/edittxtwhitebg">
+
+    <fordonor.com.fordonor.Utility.ForDonorTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:padding="@dimen/_15sdp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:text="@string/register" />
+
+</LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--Toolbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/back_iv"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/_5sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/drawer"
+            android:layout_marginLeft="@dimen/_5sdp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/toolbar_RL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tv_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/verification_title"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_16sdp"
+                    android:paddingRight="@dimen/_18sdp"/>
+
+                <ImageView
+                    android:id="@+id/btn_next"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/search"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+            </RelativeLayout>
+
+
+        </FrameLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scroll_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/next_RL">
+
+
+        <LinearLayout
+            android:id="@+id/scrollview_LL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/_10sdp">
+
+            <!--Image-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image_iv"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:src="@drawable/placeholder"
+                app:civ_border_width="@dimen/_2sdp"
+                app:civ_border_color="@color/tw__light_gray"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_15sdp"/>
+
+            <!--First Name-->
+            <fordonor.com.fordonor.Utility.ForDonorEditText
+                android:id="@+id/first_name_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittextbg_outlinegrey"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:drawableLeft="@drawable/name"
+                android:drawablePadding="@dimen/_6sdp"
+                android:hint="@string/firstname_hint"
+                android:textColorHint="@color/grey"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:padding="@dimen/_12sdp"/>
+
+            <!--Last Name-->
+            <fordonor.com.fordonor.Utility.ForDonorEditText
+                android:id="@+id/last_name_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittextbg_outlinegrey"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:drawableLeft="@drawable/name"
+                android:drawablePadding="@dimen/_6sdp"
+                android:hint="@string/lastname_hint"
+                android:textColorHint="@color/grey"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:padding="@dimen/_12sdp"/>
+
+            <!--Gender-->
+            <fordonor.com.fordonor.Utility.ForDonorEditText
+                android:id="@+id/gender_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittextbg_outlinegrey"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:drawableLeft="@drawable/name"
+                android:drawablePadding="@dimen/_6sdp"
+                android:hint="@string/gender_hint"
+                android:textColorHint="@color/grey"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:padding="@dimen/_12sdp"/>
+
+            <!--Country-->
+            <RelativeLayout
+                android:id="@+id/select_payerRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/edittextbg_outlinegrey"
+                android:padding="@dimen/_12sdp">
+
+                <ImageView
+                    android:id="@+id/location_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="2dp"
+                    android:src="@drawable/location"/>
+
+                <fordonor.com.fordonor.Utility.ForDonorTextView
+                    android:id="@+id/payer_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:text="@string/country_hint"
+                    android:textColor="@color/grey"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_14sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/location_iv"/>
+
+                <ImageView
+                    android:id="@+id/select_payer_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:src="@drawable/down_arrow"/>
+
+            </RelativeLayout>
+
+            <!--Primary Identification Label-->
+            <fordonor.com.fordonor.Utility.ForDonorTextView
+                android:id="@+id/primary_identificatn_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text="@string/primary_identificatn_title"
+                android:textColor="@color/tw__solid_white"
+                android:textAllCaps="false"
+                android:textAlignment="center"
+                android:textSize="@dimen/_14sdp"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_20sdp"/>
+
+            <!--Passport Verification Label-->
+            <fordonor.com.fordonor.Utility.ForDonorTextView
+                android:id="@+id/passport_verification_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/padssport_verification_title"
+                android:textColor="@color/grey"
+                android:textAllCaps="false"
+                android:textAlignment="center"
+                android:textSize="@dimen/_14sdp"
+                android:padding="@dimen/_10sdp"/>
+
+            <!--Passport Number-->
+            <fordonor.com.fordonor.Utility.ForDonorEditText
+                android:id="@+id/passport_no_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittextbg_outlinegrey"
+                android:layout_margin="@dimen/_20sdp"
+                android:drawableLeft="@drawable/name"
+                android:drawablePadding="@dimen/_6sdp"
+                android:hint="@string/passport_no_title"
+                android:textColorHint="@color/grey"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:padding="@dimen/_12sdp"/>
+
+            <!--Passport Cover-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <!--Passport Cover Title-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--Passport Cover Title TextView-->
+                    <fordonor.com.fordonor.Utility.ForDonorTextView
+                        android:id="@+id/passport_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/passport_cover"
+                        android:textSize="@dimen/_15sdp"/>
+
+                    <!--Passport Cover Title Madatory Red Star-->
+                    <ImageView
+                        android:layout_toRightOf="@+id/passport_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/mark_red_star"
+                        android:padding="@dimen/_2sdp"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/passport_cover_FL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/passport_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:background="@drawable/edittextbg_outlinegrey"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/placeholder"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/_5sdp"/>
+
+                    <FrameLayout
+                        android:id="@+id/passport_cover_capture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end">
+
+                        <ImageView
+                            android:id="@+id/passport_select_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/camera_grey_medium"
+                            android:scaleType="centerCrop"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/_8sdp"/>
+
+                    </FrameLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <!--Passport Photo Page-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:orientation="vertical">
+
+                <!--Passport Photo Title-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--Passport Photo Title TextView-->
+                    <fordonor.com.fordonor.Utility.ForDonorTextView
+                        android:id="@+id/passport_photo_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/passport_photo_page"
+                        android:textSize="@dimen/_15sdp"/>
+
+                    <!--Passport Cover Title Mandatory Red Star-->
+                    <ImageView
+                        android:layout_toRightOf="@+id/passport_photo_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/mark_red_star"
+                        android:padding="@dimen/_2sdp"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/passport_photo_FL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/passport_photo_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:background="@drawable/edittextbg_outlinegrey"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/placeholder"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/_5sdp"/>
+
+                    <FrameLayout
+                        android:id="@+id/passport_photo_capture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end">
+
+                        <ImageView
+                            android:id="@+id/passport_photo_select_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/camera_grey_medium"
+                            android:scaleType="centerCrop"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/_8sdp"/>
+
+                    </FrameLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <!--Selfie Photo-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_20sdp"
+                android:orientation="vertical">
+
+                <!--Selfie Title-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--Selfie Title TextView-->
+                    <fordonor.com.fordonor.Utility.ForDonorTextView
+                        android:id="@+id/selfie_photo_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selfie_photo_title"
+                        android:textSize="@dimen/_15sdp"/>
+
+                    <!--Selfie Title Mandatory Red Star-->
+                    <ImageView
+                        android:layout_toRightOf="@+id/selfie_photo_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/mark_red_star"
+                        android:padding="@dimen/_2sdp"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/selfie_photo_FL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/selfie_photo_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:background="@drawable/edittextbg_outlinegrey"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/placeholder"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/_5sdp"/>
+
+                    <FrameLayout
+                        android:id="@+id/selfie_photo_capture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end">
+
+                        <ImageView
+                            android:id="@+id/selfie_photo_select_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/camera_grey_medium"
+                            android:scaleType="centerCrop"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/_8sdp"/>
+
+                    </FrameLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <!--Icon-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_8sdp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/veri_img"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:paddingLeft="@dimen/_50sdp"
+                    android:paddingRight="@dimen/_50sdp"/>
+
+            </RelativeLayout>
+
+            <!--Declaration Text-->
+            <fordonor.com.fordonor.Utility.ForDonorTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="Coming Soon"
+                android:gravity="center_horizontal"/>
+
+            <!--Secondary Identification Label-->
+            <fordonor.com.fordonor.Utility.ForDonorTextView
+                android:id="@+id/secondary_identificatn_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text="@string/secondary_identification_title"
+                android:textColor="@color/tw__solid_white"
+                android:textAllCaps="false"
+                android:textAlignment="center"
+                android:textSize="@dimen/_14sdp"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"/>
+
+            <!--Driver License Verification Label-->
+            <fordonor.com.fordonor.Utility.ForDonorTextView
+                android:id="@+id/driver_license_verification_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/driver_license_verification_title"
+                android:textColor="@color/grey"
+                android:textAllCaps="false"
+                android:textAlignment="center"
+                android:textSize="@dimen/_14sdp"
+                android:padding="@dimen/_10sdp"/>
+
+            <!--Driver License Number-->
+            <fordonor.com.fordonor.Utility.ForDonorEditText
+                android:id="@+id/driver_license_no_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittextbg_outlinegrey"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:drawableLeft="@drawable/name"
+                android:drawablePadding="@dimen/_6sdp"
+                android:hint="@string/driver_license_no_title"
+                android:textColorHint="@color/grey"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:padding="@dimen/_12sdp"/>
+
+            <!--Driver License Front-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="vertical">
+
+                <!--Driver License Front Title-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--Driver License Front Title TextView-->
+                    <fordonor.com.fordonor.Utility.ForDonorTextView
+                        android:id="@+id/driver_license_front_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/driver_license_front_title"
+                        android:textSize="@dimen/_15sdp"/>
+
+                    <!--Driver License Front Title Madatory Red Star-->
+                    <ImageView
+                        android:layout_toRightOf="@+id/driver_license_front_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/mark_red_star"
+                        android:padding="@dimen/_2sdp"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/driver_license_FL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/driver_license_front_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:background="@drawable/edittextbg_outlinegrey"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/placeholder"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/_5sdp"/>
+
+                    <FrameLayout
+                        android:id="@+id/driver_license_front_capture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end">
+
+                        <ImageView
+                            android:id="@+id/driver_license_front_select_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/camera_grey_medium"
+                            android:scaleType="centerCrop"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/_8sdp"/>
+
+                    </FrameLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <!--Driver License Back-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:orientation="vertical">
+
+                <!--Driver License Back Title-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--Driver License Back Title TextView-->
+                    <fordonor.com.fordonor.Utility.ForDonorTextView
+                        android:id="@+id/driver_license_back_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/driver_license_back_title"
+                        android:textSize="@dimen/_15sdp"/>
+
+                    <!--Driver License Back Title Madatory Red Star-->
+                    <ImageView
+                        android:layout_toRightOf="@+id/driver_license_back_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/mark_red_star"
+                        android:padding="@dimen/_2sdp"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/driver_license_back_FL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/driver_license_back_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:background="@drawable/edittextbg_outlinegrey"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/placeholder"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:padding="@dimen/_5sdp"/>
+
+                    <FrameLayout
+                        android:id="@+id/driver_license_back_capture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end">
+
+                        <ImageView
+                            android:id="@+id/ddriver_license_back_select_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/camera_grey_medium"
+                            android:scaleType="centerCrop"
+                            android:adjustViewBounds="true"
+                            android:padding="@dimen/_8sdp"/>
+
+                    </FrameLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <!--Skip Verification TextView-->
+            <fordonor.com.fordonor.Utility.ForDonorTextView
+                android:id="@+id/skip_verification_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="@string/underline_skip_verification"
+                android:textStyle="bold"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/colorPrimaryDark"
+                android:padding="@dimen/_5sdp"
+                android:gravity="center_horizontal"/>
+
+
+            <!--Note Text RL-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/_5sdp">
+
+                <!--Note Title TextView-->
+                <fordonor.com.fordonor.Utility.ForDonorTextView
+                    android:id="@+id/note_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/note_title"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_14sdp"
+                    android:textColor="@color/darker_grey"/>
+
+                <!--Note TextView-->
+                <fordonor.com.fordonor.Utility.ForDonorTextView
+                    android:id="@+id/note_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/note_text"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/grey"
+                    android:layout_toRightOf="@+id/note_title_tv"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_2sdp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <!--Next TextView RL-->
+    <RelativeLayout
+        android:id="@+id/next_RL"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <!--Next Label-->
+        <fordonor.com.fordonor.Utility.ForDonorTextView
+            android:id="@+id/next_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next_title"
+            android:textColor="@color/tw__solid_white"
+            android:textAllCaps="false"
+            android:textAlignment="center"
+            android:textSize="@dimen/_14sdp"
+            android:padding="@dimen/_10sdp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

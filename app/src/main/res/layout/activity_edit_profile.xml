@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.nits_dev.fordonor.Profile.EditProfileActivity">
+
+
+
+
+    <ScrollView
+        android:id="@+id/edit_pro_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/save_RL">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Profile Above Section Profile Name,Profile Image etc.-->
+            <RelativeLayout
+                android:id="@+id/RL1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_330sdp">
+
+                <!--BackGround Image RL-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--BackGround Image-->
+                    <ImageView
+                        android:id="@+id/tv_group_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fitsSystemWindows="true"
+                        android:background="@drawable/placeholder"
+                        android:scaleType="fitXY" />
+
+                    <!--BackGround Overlay Color-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#7e052d46"/>
+
+                </RelativeLayout>
+
+                <!--Toolbar-->
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/editprofile_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    app:contentInsetEnd="0dp"
+                    app:contentInsetStart="0dp"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/small_back"
+                            android:scaleType="centerCrop"
+                            android:adjustViewBounds="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/_5sdp"/>
+
+                        <fordonor.com.fordonor.Utility.ForDonorTextView
+                            android:id="@+id/toolbar_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Edit Profile"
+                            android:textStyle="bold"
+                            android:textColor="@color/tw__solid_white"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_15sdp"
+                            android:layout_marginLeft="@dimen/_5sdp"/>
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.Toolbar>
+
+                <!--  Profile Title and Back ImageView-->
+                <!--<RelativeLayout
+                    android:id="@+id/RL2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/RL3">
+
+                    <ImageView
+                        android:id="@+id/back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/small_back"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"/>
+
+                    <com.nits_dev.fordonor.Utility.ForDonorTextView
+                        android:id="@+id/toolbar_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"
+                        android:textStyle="bold"
+                        android:textColor="@color/tw__solid_white"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="@dimen/_15sdp"/>
+
+                </RelativeLayout>-->
+
+
+                <!--Contents RL-->
+                <RelativeLayout
+                    android:id="@+id/RL3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/editprofile_toolbar"
+                    android:gravity="center_horizontal">
+
+
+                    <!--Profile Image FL-->
+                    <FrameLayout
+                        android:id="@+id/FL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_centerHorizontal="true">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_img_cv"
+                            android:layout_width="@dimen/_85sdp"
+                            android:layout_height="@dimen/_85sdp"
+                            android:src="@drawable/placeholder"
+                            app:civ_border_width="@dimen/_2sdp"
+                            app:civ_border_color="@android:color/white"/>
+
+
+                        <FrameLayout
+                            android:id="@+id/profile_image_capture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|end">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="@dimen/_25sdp"
+                                android:layout_height="@dimen/_25sdp"
+                                android:layout_gravity="center"
+                                android:src="@android:color/white"/>
+
+                            <fordonor.com.fordonor.customview.FontAwesomeIconView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/font_camera"
+                                android:textColor="@color/dark_grey"/>
+
+
+                        </FrameLayout>
+
+                    </FrameLayout>
+
+
+
+                    <!--Profile Name LL-->
+                    <LinearLayout
+                        android:id="@+id/profile_name_LL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_below="@+id/FL"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal"
+                        android:paddingLeft="@dimen/_25sdp"
+                        android:paddingRight="@dimen/_25sdp">
+
+                        <!--First Name-->
+                        <RelativeLayout
+                            android:id="@+id/first_name_RL"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_text_rounded_white_bg"
+                            android:padding="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_10sdp">
+
+                            <fordonor.com.fordonor.Utility.ForDonorEditText
+                                android:id="@+id/first_name_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/white"
+                                android:hint="First Name"
+                                android:textColorHint="@color/darker_grey"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapWords"
+                                android:textSize="@dimen/_10sdp"
+                                android:textStyle="bold"/>
+
+                        </RelativeLayout>
+
+                        <!--Last Name-->
+                        <RelativeLayout
+                            android:id="@+id/last_name_RL"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_text_rounded_white_bg"
+                            android:padding="@dimen/_5sdp"
+                            android:layout_marginLeft="@dimen/_10sdp">
+
+                            <fordonor.com.fordonor.Utility.ForDonorEditText
+                                android:id="@+id/last_name_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/white"
+                                android:hint="Last name"
+                                android:textColorHint="@color/darker_grey"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapWords"
+                                android:textSize="@dimen/_10sdp"
+                                android:textStyle="bold"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!--Verified Email and Verified By Driver Text RL-->
+                    <RelativeLayout
+                        android:id="@+id/verify_email_driver_RL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/profile_name_LL"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_2sdp">
+
+                        <fordonor.com.fordonor.Utility.ForDonorTextView
+                            android:id="@+id/verified_email_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@android:color/white"
+                            android:text="Verified Email"
+                            android:textSize="@dimen/_10sdp"
+                            android:drawableLeft="@drawable/envelop_green"
+                            android:drawablePadding="@dimen/_5sdp"/>
+
+                        <fordonor.com.fordonor.Utility.ForDonorTextView
+                            android:id="@+id/verified_driver_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@android:color/white"
+                            android:text="Verified Driver License"
+                            android:textSize="@dimen/_10sdp"
+                            android:drawableLeft="@drawable/star_green"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:layout_toRightOf="@+id/verified_email_tv"
+                            android:layout_marginLeft="@dimen/_10sdp"/>
+
+                    </RelativeLayout>
+
+                    <!--Profile About TextView-->
+                    <fordonor.com.fordonor.Utility.ForDonorEditText
+                        android:id="@+id/profile_about_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="About Profile"
+                        android:textColorHint="@color/darker_grey"
+                        android:textColor="@color/darker_grey"
+                        android:textSize="@dimen/_10sdp"
+                        android:background="@drawable/edit_text_rounded_white_bg"
+                        android:gravity="top|left"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/verify_email_driver_RL"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:lines="2"
+                        android:padding="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_25sdp"
+                        android:layout_marginRight="@dimen/_25sdp"/>
+
+                    <!--Age EditText-->
+                    <fordonor.com.fordonor.Utility.ForDonorEditText
+                        android:id="@+id/age_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_rounded_white_bg"
+                        android:textColor="@color/darker_grey"
+                        android:hint="Age"
+                        android:textColorHint="@color/darker_grey"
+                        android:textSize="@dimen/_10sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/profile_about_tv"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_80sdp"
+                        android:layout_marginRight="@dimen/_80sdp"
+                        android:inputType="number"
+                        android:imeOptions="actionNext"/>
+
+                    <!--Phone EditText-->
+                    <fordonor.com.fordonor.Utility.ForDonorEditText
+                        android:id="@+id/phone_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_rounded_white_bg"
+                        android:textColor="@color/darker_grey"
+                        android:hint="Phone"
+                        android:textColorHint="@color/darker_grey"
+                        android:textSize="@dimen/_10sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/age_tv"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_80sdp"
+                        android:layout_marginRight="@dimen/_80sdp"
+                        android:inputType="phone"
+                        android:imeOptions="actionDone"/>
+
+                    <!--Location Image and Location TextView RL-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/phone_tv"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_5sdp">
+
+                        <!--Location ImageView-->
+                        <ImageView
+                            android:id="@+id/location_icon_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/location_white"
+                            android:scaleType="centerCrop"
+                            android:adjustViewBounds="true"/>
+
+                        <!--Location TextView-->
+                        <fordonor.com.fordonor.Utility.ForDonorTextView
+                            android:id="@+id/location_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/white"
+                            android:text="California"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_toRightOf="@+id/location_icon_iv"
+                            android:layout_centerVertical="true"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <!--Social Connections-->
+            <RelativeLayout
+                android:id="@+id/RL4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/RL1">
+
+                <!--Social Connections TextView-->
+                <fordonor.com.fordonor.Utility.ForDonorTextView
+                    android:id="@+id/social_connection_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/mid_grey"
+                    android:text="@string/social_connection_title"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_14sdp"
+                    android:padding="@dimen/_10sdp"/>
+
+
+                <!--Connection Status Via Facebook-->
+                <RelativeLayout
+                    android:id="@+id/fb_RL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/social_connection_tv"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/fb_iv"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:src="@drawable/fb_grey"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/fb_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/not_connected_via_fb_title"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/darker_grey"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:layout_toRightOf="@+id/fb_iv"
+                        android:layout_centerVertical="true"/>
+
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/fb_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+                <!--Connection Status Via Twitter-->
+                <RelativeLayout
+                    android:id="@+id/twitter_RL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fb_RL"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/twitter_iv"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:src="@drawable/twitter_grey"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/twitter_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/not_connected_via_twitter_title"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/darker_grey"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:layout_toRightOf="@+id/twitter_iv"
+                        android:layout_centerVertical="true"/>
+
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/twitter_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+                <!--Connection Status Via LinkedIn-->
+                <RelativeLayout
+                    android:id="@+id/linkedin_RL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/twitter_RL"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/linkedin_iv"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:src="@drawable/linkedin_grey"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/linkedin_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/not_connected_via_twitter_title"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/darker_grey"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:layout_toRightOf="@+id/linkedin_iv"
+                        android:layout_centerVertical="true"/>
+
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/linkedin_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+                <!--Connection Status Via Instagram-->
+                <RelativeLayout
+                    android:id="@+id/instagram_RL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linkedin_RL"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_10sdp">
+
+                    <ImageView
+                        android:id="@+id/instagram_iv"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:src="@drawable/instagram_grey"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/instagram_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/not_connected_via_twitter_title"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/darker_grey"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:layout_toRightOf="@+id/instagram_iv"
+                        android:layout_centerVertical="true"/>
+
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/instagram_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+                <!--CheckBox RL-->
+                <RelativeLayout
+                    android:id="@+id/checkbox_RL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:layout_below="@+id/instagram_RL">
+
+                    <CheckBox
+                        android:id="@+id/donor_selection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:theme="@style/MyCheckBox"
+                        android:text="Organ Donor"
+                        android:textSize="@dimen/_12sdp"/>
+
+                </RelativeLayout>
+
+
+                <!--Remove DonorPro Button RL-->
+                <RelativeLayout
+                    android:id="@+id/rbt_donor_pro_RL"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginLeft="@dimen/_25sdp"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:background="@drawable/blue_rounded_button_bg"
+                    android:layout_below="@+id/checkbox_RL">
+
+                  <!--Remove DonorPro Button-->
+                    <fordonor.com.fordonor.Utility.ForDonorTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/tw__solid_white"
+                        android:text="Remove DonorPro"/>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <!--Save TextView RL-->
+    <RelativeLayout
+        android:id="@+id/save_RL"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <!--Save Label-->
+        <fordonor.com.fordonor.Utility.ForDonorTextView
+            android:id="@+id/save_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save_title"
+            android:textColor="@color/tw__solid_white"
+            android:textAllCaps="false"
+            android:textAlignment="center"
+            android:textSize="@dimen/_14sdp"
+            android:padding="@dimen/_10sdp"/>
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

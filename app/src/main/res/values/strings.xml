@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">ForDonor</string>
+    <string name="signup">Sign Up</string>
+    <string name="signin">Sign In</string>
+    <string name="frgt">Forgot Your Password?</string>
+    <string name="signinwith">Or Sign in With</string>
+    <string name="dontacc">Don\'t Have an Account?</string>
+    <string name="register">Register Now</string>
+    <string name="firstname_hint">First Name</string>
+    <string name="lastname_hint">Last Name</string>
+    <string name="gender_hint">Gender</string>
+    <string name="country_hint">Country</string>
+    <string name="verification_title">Verification</string>
+    <string name="primary_identificatn_title">Primary Identification</string>
+    <string name="secondary_identification_title">Secondary Identification</string>
+    <string name="padssport_verification_title">Passport Verification</string>
+    <string name="driver_license_verification_title">Driver License Verification</string>
+    <string name="passport_no_title">Passport Number</string>
+    <string name="driver_license_no_title">Driver License Number</string>
+    <string name="passport_cover">Passport Cover</string>
+    <string name="passport_photo_page">Passport Photo Page</string>
+    <string name="selfie_photo_title">Selfie Photo</string>
+    <string name="driver_license_front_title">Driver License Front</string>
+    <string name="driver_license_back_title">Driver License Back</string>
+    <string name="underline_skip_verification"><b><u>Skip Verification</u></b></string>
+    <string name="next_title">Next</string>
+    <string name="note_title">Note:</string>
+    <string name="note_text">You will need to provide verification to create campaign or become a donor</string>
+    <string name="social_connection_title">Social Connections</string>
+    <string name="connected_via_fb_title">Connected Via Facebook</string>
+    <string name="not_connected_via_fb_title">Not Connected Via Facebook</string>
+    <string name="connected_via_twitter_title">Connected Via Twitter</string>
+    <string name="not_connected_via_twitter_title">Not Connected Via Twitter</string>
+    <string name="connected_via_linkedin_title">Connected Via Linked In</string>
+    <string name="not_connected_via_linkedin_title">Not Connected Via Linked In</string>
+    <string name="connected_via_instagram_title">Connected Via Instagram</string>
+    <string name="not_connected_via_instagram_title">Not Connected Via Instagram</string>
+    <string name="save_title">Save</string>
+
+
+    <!--fbapi-id-->
+    <string name="facebook_app_id">361646924311482</string>
+    <string name="fb_login_protocol_scheme">fb361646924311482</string>
+    <string name="title_activity_maps">Map</string>
+
+
+    <!--FontAwesome -->
+    <string name="font_camera">&#xf030;</string>
+    <string name="pencil_alt">&#xf303;</string>
+
+    <!--Drawer Layout-->
+    <string name="openDrawer">openDrawer</string>
+    <string name="closeDrawer">closeDrawer</string>
+
+</resources>
